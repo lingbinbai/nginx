@@ -61,6 +61,9 @@ cd /usr/local/src
 wget https://www.openssl.org/source/openssl-1.0.2q.tar.gz
 tar zxvf openssl-1.0.2q.tar.gz
 cd openssl-1.0.2q/
+./config
+make
+make install
 ```
 5. 安装nginx
 Nginx 一般有两个版本，分别是稳定版和开发版，您可以根据您的目的来选择这两个版本的其中一个，下面是把 Nginx 安装到 /usr/local/nginx 目录下的详细步骤：

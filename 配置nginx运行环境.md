@@ -13,6 +13,7 @@ mkdir template
 ### 编写工具脚本
 #### 启动nginx
 cd /root/nginx/bin
+
 touch start
 ``` bash
 #!/bin/bash
@@ -68,4 +69,23 @@ mv $ACCLOG $ACCLOG_DATE
 mv $ERRLOG $ERRLOG_DATE
 
 kill -USR1 $( cat $APPROOT/nginx.pid )
+```
+
+#### 配置工具执行权限
+cd /root/nginx/bin
+chmod 700 *
+
+# 添加nginx配置文件
+```
+http {
+    server {
+        listen          80;
+        server_name     www.domain.com;
+        access_log      logs/access.log main;
+        location / {
+            index index.html;
+            root  /root/www/domain.com;
+        }
+    }
+}
 ```

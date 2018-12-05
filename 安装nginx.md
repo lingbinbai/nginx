@@ -87,10 +87,10 @@ make
 make install
 ```
 6. 启动
-nginx 默认使用80端口，确保系统的 80 端口没被其他程序占用，运行/usr/local/nginx/sbin/nginx 命令来启动 Nginx.
+nginx 默认使用80端口，确保系统的 80 端口没被其他程序占用，运行/usr/local/nginx/nginx 命令来启动 Nginx.
 如果要在其他电脑上访问，记得放开80端口.
 ```
-sudo /usr/local/nginx/sbin/nginx
+/usr/local/nginx/nginx
 netstat -ano|grep 80
 ps -ef|grep nginx
 ```

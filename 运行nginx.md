@@ -75,13 +75,21 @@ kill -USR1 $( cat $APPROOT/nginx.pid )
 cd /root/nginx/bin
 chmod 700 *
 
-# 添加nginx配置文件
+### 添加nginx配置文件
 ```
+user  root root;
+worker_processes  2;
+
+pid /root/nginx/logs/nginx.pid;
+
+events {
+     worker_connections 1024;
+}
+
 http {
     server {
         listen          80;
         server_name     www.domain.com;
-        access_log      logs/access.log main;
         location / {
             index index.html;
             root  /root/www/domain.com;
@@ -89,3 +97,21 @@ http {
     }
 }
 ```
+
+### 创建web资源
+
+```sh
+mkdir -p /root/www/domain.com
+echo "Hello Nginx" > /root/www/domain.com/index.html
+```
+
+### 运行nginx
+cd /root/nginx/bin
+./start
+
+### 查看nginx运行状态
+ps -ef|grep nginx
+
+### 关闭nginx
+cd /root/nginx/
+./stop

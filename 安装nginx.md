@@ -19,7 +19,7 @@ apt-get install libssl-dev
 centos平台编译环境使用如下指令
 ```
 yum -y install gcc automake autoconf libtool make
-yum install gcc gcc-c++
+yum -y install gcc gcc-c++
 yum -y install openssl openssl-devel
 ```
 

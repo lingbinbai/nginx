@@ -31,11 +31,12 @@ cd /usr/local/src
 ```
 2. 安装PCRE库
 ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/ 下载最新的 PCRE 源码包，使用下面命令下载编译和安装 PCRE 包：
+注意：暂时不要使用pcre2，否则nginx会安装失败.
 ```
 cd /usr/local/src
-wget ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre2-10.21.tar.gz
-tar zxvf pcre2-10.21.tar.gz
-cd pcre2-10.21p
+wget ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-8.38.tar.gz
+tar zxvf pcre-8.38
+cd pcre-8.38
 ./configure
 make
 make install
